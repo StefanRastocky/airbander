@@ -1,0 +1,26 @@
+# Virtual environment
+.venv/
+
+# examples for personal use of python, pip, venv and git commands
+snippets.example
+
+# Python cache files
+__pycache__/
+*.py[cod]
+
+# Distribution / packaging
+*.egg-info/
+dist/
+build/
+
+# Logs and temporary files
+*.log
+*.tmp
+
+# IDE/editor settings
+#.vscode/
+.vim/
+*.vim
+
+# Environment variables
+.env

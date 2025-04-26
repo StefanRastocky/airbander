@@ -1,0 +1,6 @@
+webrtcvad
+vosk
+torch
+transformers
+torchaudio
+datasets
