@@ -1,0 +1,22 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "airbander"
+version = "0.1.0"
+description = "Airband audio and ADS-B fusion, provides functions such as atc stream chunking, transcription and callsign id."
+authors = [{ name = "Stefan Rastocky", email = "rastockystefan@gmail.com" }]
+dependencies = [
+    "webrtcvad",
+    "whisper",
+    "numpy",
+    "scipy",
+    "soundfile"
+]
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.packages.find]
+where = ["src"]

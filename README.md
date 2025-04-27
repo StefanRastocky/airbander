@@ -6,7 +6,7 @@ Airbander is an **educational, experimental** toolkit for fusing air-band voice 
 ## Features  
 - **Voice Segmentation**: Split live air-band streams into individual WAV clips. (✔️ Done)  
 - **ADS-B Ingestion**: Parse live ADS-B feeds (dump1090 or similar).  
-- **Call-Sign Extraction**: Transcribe clips and extract call-signs.  
+- **Call-Sign Extraction**: Transcribe clips and extract call-signs. (partially implemented)
 - **Data Fusion**: Align voice events with ADS-B tracks.  
 - **Visualization**: Show fused data on a simple map.
 
@@ -34,6 +34,7 @@ python3 -m venv .venv
 source .venv/bin/activate
 
 # Install dependencies
+pip install -e .
 pip install -r requirements.txt
 
 # Run the voice segmenter
