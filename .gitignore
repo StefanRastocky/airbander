@@ -16,6 +16,7 @@ build/
 # Logs and temporary files
 *.log
 *.tmp
+data/tmp/*
 
 # IDE/editor settings
 #.vscode/
