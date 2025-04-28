@@ -17,6 +17,9 @@ build/
 *.log
 *.tmp
 data/tmp/*
+data/archive/*
+!data/tmp/.keep
+!data/archive/.keep
 
 # IDE/editor settings
 #.vscode/
