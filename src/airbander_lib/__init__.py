@@ -1,4 +1,5 @@
 from .chunker import Chunker
-#from .transcribe import Transcriber
+from .transcriber import Transcriber
+from .core import AudioProcessing
 
-#__all__ = ["Chunker", "Transcriber"]
+__all__ = ["Chunker", "Transcriber", "AudioProcessing"]

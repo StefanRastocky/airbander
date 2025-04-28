@@ -16,7 +16,7 @@ Airbander is an **educational, experimental** toolkit for fusing air-band voice 
 2. **ADS-B Receiver**  
    - [ ] Ingest and parse position reports  
 3. **Call-Sign Extraction**  
-   - [ ] Transcribe audio and tag call-signs  
+   - [✔️,x]] Transcribe audio and tag call-signs  
 4. **Fusion Engine**  
    - [ ] Correlate voice and ADS-B data  
 5. **UI Dashboard**  
@@ -37,9 +37,20 @@ source .venv/bin/activate
 pip install -e .
 pip install -r requirements.txt
 
-# Run the voice segmenter
-python chunker.py https://your-airband-stream.pls
-```
+# Test the voice segmenter, preprocessing and transcription
+# IN HOME OF THE PROJECT RUN:
+>>> from airbander_lib import Chunker AudioProcessing Transcriber 
+>>> stream_chunking = Chunker("https://SomeATCstream.mp3")
+>>> stream_chunking.start()
+# wait for some transmissions to be captured and written to data/tmp
+>>> stream_chunking.stop()
+>>> denoise = AudioProcessing()
+>>> denoise.preprocess("data/tmp/timestamped.wav")
+# the .wav will be normalised and written to timestamp_DENOISED.wav in data/tmp
+# now to run voice recognition on the wav:
+>>> text = Transcriber()
+>>> text.transcribe("path/to/.wav")
+
 
 ## License  
 This project is released under the **MIT License**. You may copy, modify, merge, publish, distribute, and sublicense copies of the Software under the following conditions:
