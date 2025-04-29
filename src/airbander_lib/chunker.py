@@ -4,7 +4,7 @@ import webrtcvad
 
 class Chunker:
 
-    def __init__(self, url, out_dir="data/tmp", vad_aggr=2, sr=16000):
+    def __init__(self, url, out_dir="data/tmp", vad_aggr=3, sr=16000):
         """Chunker class takes a voice stream url for ffmpeg, output directory for files
         vad aggressiveness (def. = 2) and sample rate (def. 16000). exposes methods for
         per-transmission chunking of the url stream into .wav files at output directory.

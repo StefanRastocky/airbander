@@ -3,6 +3,10 @@
 ## Description  
 Airbander is an **educational, experimental** toolkit for fusing air-band voice with ADS-B position data into a unified **operational picture** of nearby air traffic for situational awareness.
 
+## First milestone achieved
+![screenshot of airband message transcription](docs/screenshot.png)
+Continuous stream is now segmented into individual transmissions in real time and transcribed into text using parallel processing. See src/pipeline.py for example implementation.
+
 ## Features  
 - **Voice Segmentation**: Split live air-band streams into individual WAV clips. (✔️ Done)  
 - **ADS-B Ingestion**: Parse live ADS-B feeds (dump1090 or similar).  
@@ -16,7 +20,7 @@ Airbander is an **educational, experimental** toolkit for fusing air-band voice 
 2. **ADS-B Receiver**  
    - [ ] Ingest and parse position reports  
 3. **Call-Sign Extraction**  
-   - [✔️,x]] Transcribe audio and tag call-signs  
+   - [✔️,x] Transcribe audio and tag call-signs  
 4. **Fusion Engine**  
    - [ ] Correlate voice and ADS-B data  
 5. **UI Dashboard**  
@@ -37,8 +41,12 @@ source .venv/bin/activate
 pip install -e .
 pip install -r requirements.txt
 
+# To run a real time transcriber do:
+./src/pipeline.py https://some.atc.stream.provider.url
+
+
 # Test the voice segmenter, preprocessing and transcription
-# IN HOME OF THE PROJECT RUN:
+# IN HOME OF THE PROJECT RUN in python console:
 >>> from airbander_lib import Chunker AudioProcessing Transcriber 
 >>> stream_chunking = Chunker("https://SomeATCstream.mp3")
 >>> stream_chunking.start()
@@ -50,7 +58,7 @@ pip install -r requirements.txt
 # now to run voice recognition on the wav:
 >>> text = Transcriber()
 >>> text.transcribe("path/to/.wav")
-
+```
 
 ## License  
 This project is released under the **MIT License**. You may copy, modify, merge, publish, distribute, and sublicense copies of the Software under the following conditions:
