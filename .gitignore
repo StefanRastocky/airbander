@@ -16,6 +16,7 @@ build/
 # Logs and temporary files
 *.log
 *.tmp
+data/*
 data/tmp/*
 data/archive/*
 !data/tmp/.keep
